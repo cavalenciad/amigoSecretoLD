@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos - Amigo Secreto LD</title>
+</head>
+<body>
+    <section class="group">
+        <form action="/groups" method="post">
+
+            <h2>Creación de grupos</h2>
+            <p>Para la creación de un grupo debes tener en cuenta:
+                <ul>
+                    <li>El creador del grupo será el administrador del mismo.</li>
+                    <li>El administrador del grupo se encargará de diligenciar las fechas de endulzadas y descubrimiento.</li>
+                    <li>Una vez creado el grupo, los participantes podrán acceder a él y realizar la inscripción con los datos solicitados.</li>
+                </ul>
+            </p>
+
+            <div>
+                <input type="text" placeholder="Nombre del grupo" name="groupName">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Nombre del líder" name="name">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Apellido del líder" name="lastName">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Documento de identidad" name="idCard">
+            </div>
+
+            <div>
+                <input type="password" placeholder="Contraseña" name="password">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Gustos" name="like">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Disgustos" name="dislike">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Alergias" name="alergies">
+            </div>
+
+            <input type="submit" value="Crear Grupo">
+
+        </form>
+    </section>
+</body>
+</html>
