@@ -6,7 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Secreto LD</title>
 </head>
+    <nav class="navbar">
+    <a href="/"><i class="fa-solid fa-house-user"></i> INICIO</a>
+    <!-- <a href="/about-us"><i class="fa-solid fa-user-group"></i> Crear Grupo</a>
+        <a href="/user/register"><i class="fa-solid fa-rectangle-list"></i> Encontrar Grupo  </a> -->
+        <a href="/user/login"><i class="login"></i> Login</a>
+  
+</nav>
 <body>
-    <p>Hola Mundo</p>
+    <div class="topSide">
+    <h1> Bienvenidos a todos nuestros participantes de Línea Directa</h1>
+
+    <h3>  Aquí encontraras el sorteo de Amigo Secreto para este mes de Septiembre.</h3>
+
+    <p>Ahora que miembros de nuestra empresa y amigos viven lejos uno del otro, el proceso de amigo secreto puede llegar a ser difícil de realizar. Por esto Amigo Secreto LD ofrece un generador gratuito del amigo invisible en línea.</p>
+
+    <form action="/views/groups" method="get">
+        <input type="submit" name="groupsCreate" value="CREAR GRUPO">
+    </form>
+
+    <form action="/views/chooseGroup.ejs" method="get">
+        <input type="submit" name="chooseGroup" value="ELEGIR GRUPO">
+    </form>
+         
+    </div>
+
+
 </body>
 </html>
