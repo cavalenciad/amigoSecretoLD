@@ -1,6 +1,3 @@
-const { DataTypes } = require("sequelize");
-const { sequelize } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
 
     let alias = "groups";
@@ -12,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },        
-        name:{
+        groupname:{
             type: DataTypes.STRING(100),
             allowNull: false
         }
@@ -23,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     };
 
-    const members = sequelize.define(alias, cols, config)
+    const groups = sequelize.define(alias, cols, config)
 
     groups.associate = function(models){
         groups.hasMany(models.members, {
