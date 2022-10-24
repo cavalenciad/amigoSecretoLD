@@ -7,56 +7,26 @@ const groupsController = {
     },
 
     groupsCreate: (req, res) => {
-        //res.send("estoy viajando por post")
-
-        /* let grupos = db.groups.findAll({
-            include:{
-                all: true,
-                nestred: true
-            }
-        }) */
-
-        db.members.findOne({
-            where:{
-                idcard: req.body.idCard
-            }
+        db.groups.create({
+            groupname: req.body.groupName,
         })
-        .then((member) => {
-            if(member){
-                res.render('groups', {
-                    errors: {
-                        idcard: {
-                            msg: 'Este usuario ya está registrado'
-                        }
-                    }
-                })
-            }else{
-                db.groups.create({
-                    groupname: req.body.groupName
-                });
-                db.members.create({
-                    name: req.body.name,
-                    lastname: req.body.lastName,
-                    idcard: req.body.idCard,
-                    password: req.body.password,
-                    like: req.body.like,
-                    dislike: req.body.dislike,
-                    alergies: req.body.alergies,
-                    rol: 1 //1 para administrador
-                })
-                .then((member) => {
-                    res.redirect('/inicioSesion')
-                });
-            }
+        .then(() => {
+            res.redirect("/inicioSesion")
         })
     },
 
     register: (req, res) => {
-        res.render("register.ejs");
-    },
+        
+        db.groups.findAll({
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+        .then((group) => {
+            res.render("register.ejs", {group});
+        })
 
-    chooseGroup: (req, res) => {
-        res.render("chooseGroup.ejs");
     },
 
     login: (req, res) => {
