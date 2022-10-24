@@ -4,7 +4,6 @@ const groupsController = require("../Controllers/groupsController");
 
 router.get("/grupos", groupsController.groupsForm)
 router.get("/registro", groupsController.register)
-router.get("/elegirGrupo", groupsController.chooseGroup)
 router.get("/inicioSesion", groupsController.login)
 
 router.post("/grupos", groupsController.groupsCreate)

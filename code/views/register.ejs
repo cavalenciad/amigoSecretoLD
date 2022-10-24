@@ -40,7 +40,17 @@
                 <input type="text" placeholder="Alergias" name="alergies">
             </div>
 
+            <div class="inputSelect">
+                <select name="group" data-label="Group">
+                    <% group.forEach(group => { %>
+                        <option value="<%= group.id %>"><%= group.groupname %></option>
+                    <% }); %>
+                </select>
+            </div>
+
             <input type="submit" value="Registrarme">
+
+            <a class = "registered" href="/inicioSesion">Ya estoy registrado</a>
 
         </form>
     </section>
