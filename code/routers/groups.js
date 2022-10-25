@@ -7,5 +7,6 @@ router.get("/registro", groupsController.register)
 router.get("/inicioSesion", groupsController.login)
 
 router.post("/grupos", groupsController.groupsCreate)
+router.post("/registro", groupsController.registerCreate)
 
 module.exports = router;

@@ -12,7 +12,7 @@
 <body>
     <section class="container">
         <h2>Registrarme en el grupo</h2>
-        <form  class="form-horizontal" action="/register" method="post">
+        <form  class="form-horizontal" action="/registro" method="post">
             <div class="form-group">
             <div class="col-sm-10">
                 <label class="control-label col-sm-2" for="name">Nombre:</label>
@@ -28,6 +28,11 @@
                 <label class="control-label col-sm-2" for="idCard">Documento de identidad:</label>
                 <input type="text" placeholder="C.C" name="idCard">
             </div>
+            <% if (locals.errors && errors.idcard) { %>
+                <div class="Merrors">
+                    <%= errors.idcard.msg %> 
+                </div>
+            <% } %>
 
             <div class="col-sm-10">
                 <label class="control-label col-sm-2" for="password">Contraseña:</label>
@@ -45,16 +50,11 @@
             </div>
 
             <div class="col-sm-10">
-                <label class="control-label col-sm-2" for="alergies">Disgustos:</label>
+                <label class="control-label col-sm-2" for="alergies">Alergias:</label>
                 <input type="text" placeholder="Alergias" name="alergies">
                
             </div>
 
-<<<<<<< HEAD
-           
-            </div>
-            <input type="submit" value="Registrarme">
-=======
             <div class="inputSelect">
                 <select name="group" data-label="Group">
                     <% group.forEach(group => { %>
@@ -67,7 +67,6 @@
 
             <a class = "registered" href="/inicioSesion">Ya estoy registrado</a>
 
->>>>>>> 4a4658bbff4455a3554a5e16b5ae278dae166163
         </form>
     </section>
 </body>
