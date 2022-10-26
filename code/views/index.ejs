@@ -4,36 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <title>Amigo Secreto LD</title>
 </head>
-    <nav class="navbar">
-        <a href="/"><i class="fa-solid fa-house-user"></i> INICIO</a>
-        <!-- <a href="/about-us"><i class="fa-solid fa-user-group"></i> Crear Grupo</a>
-        <a href="/user/register"><i class="fa-solid fa-rectangle-list"></i> Encontrar Grupo  </a> -->
-        <a href="/user/login"><i class="login"></i> Login</a>  
-    </nav>
+  
 <body>
-    <div class="topSide">
-        <h1> Bienvenidos a todos nuestros participantes de Línea Directa</h1>
 
-        <h3> Aquí encontraras el sorteo de Amigo Secreto para este mes de Septiembre.</h3>
+  
+    <div class="background">
 
-        <p>Ahora que miembros de nuestra empresa y amigos viven lejos uno del otro, el proceso de amigo secreto puede llegar a ser difícil de realizar. Por esto Amigo Secreto LD ofrece un generador gratuito del amigo invisible en línea.</p>
+     <!-------- MENU DE NAVEGACIÓN -------->
+     <%- include("./partials/header.ejs")%>
 
-        <form action="/grupos" method="get">
-            <input type="submit" name="groupsCreate" value="CREAR GRUPO">
+      
+        <h1> <b> Bienvenid@ al Amigo Secreto en Línea Directa</b> </h1>
+
+     <section class="topSide">
+
+        <p>Ahora que miembros de nuestra empresa y amigos viven lejos uno del otro, el proceso de amigo secreto puede llegar a ser difícil de realizar. Por esto Amigo Secreto LD ofrece un generador gratuito del amigo invisible en línea. 
+          Aquí puedes crear un grupo para tu sector, ponerle el nombre que desees y invitar a tus integrantes
+        </p>
+       
+
+    </section>
+
+    <!-- <section class="topSide">
+        <p>Tienes la oportunidad de registrarte con tus datos personales y algunas preferencias </p>
+    </section> -->
+        <div class="buttons">
+        <form class="btnCreate" action="/grupos" method="get">
+            <input class="btn btn-primary " type="submit" name="groupsCreate" value="CREAR GRUPO">
         </form>
 
-        <form action="/registro" method="get">
-            <input type="submit" name="register" value="REGISTRARME">
+        <form class="" action="/registro" method="get">
+            <input class="btn btn-success" type="submit" name="register" value="REGISTRARME">
         </form>
 
-        <form action="/inicioSesion" method="get">
-            <input type="submit" name="login" value="INICIAR SESION">
+        <form class="justify-content-between" action="/inicioSesion" method="get">
+            <input class="d-flex justify-content-end btn btn-danger" type="submit" name="login" value="INICIAR SESION">
         </form>
-         
-    </div>
-
-
+        </div>
+    
+    
+     <div class="container" style="margin-top:50px">
+        <div class="descriptionFixed">
+        <h2>Historia del Amigo Secreto</h2>
+        <div class="row">
+          <div class="col-md-4">
+              <div class="fixedTitle">
+                  <h3><strong>¿Cómo comenzó el Amigo Secreto en América?</strong></h3>
+               
+            <p>
+              Los colonizadores neerlandeses trajeron con ellos la tradición de "Sinterklaas" (Santa Claus) al Nuevo Mundo hace más de 400 años. Santa Claus o, San Nicolás, en América está basado en "Sinterklaas". Ambos traen regalos a los niños y adultos por igual. Ya que familias y amigos a menudo intercambian regalos en la época de Navidad, el Amigo Secreto, o Amigo Invisible, comenzó para simplificar y al mismo tiempo hacer divertido el proceso de dar regalos. </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+               <div class="fixedTitle">
+                  <h3><strong>¿Cómo funcionaba el Amigo Secreto antes de la internet?</strong></h3>
+               </div>
+            <p>
+              Un grupo de personas solían escribir su nombre en un pequeño papel y estos se juntaban en un sombrero, después cada persona sacaba un papel en secreto con el nombre de alguna otra persona. Luego se compraba un regalo que se daba a la persona de quien estaba escrito el nombre en el papelito. </p>
+            
+          </div>
+          <div class="col-md-4"> 
+              <div class="fixedTitle">
+              <h3><strong>¿Cómo funcionaba el Amigo Secreto antes de la internet?</strong></h3>
+          </div>
+            <p>
+              Un grupo de personas solían escribir su nombre en un pequeño papel y estos se juntaban en un sombrero, después cada persona sacaba un papel en secreto con el nombre de alguna otra persona. Luego se compraba un regalo que se daba a la persona de quien estaba escrito el nombre en el papelito.
+              
+              ¿Por qué organizar el sorteo del Amigo Secreto en línea?
+              Ahora que miembros de familias y amigos viven lejos uno del otro, el proceso del sombrero puede llegar a ser difícil de realizar. Por esto DrawNames ofrece un generador gratuito del amigo invisible en línea.
+              
+              Cada grupo elige a algún miembro del grupo como su Organizador. El Organizador ingresa el nombre y dirección de correo electrónico de cada participante, y envía un correo electrónico con la información del intercambio. Después DrawNames sortea en secreto un nombre de los miembros del grupo y lo envía por correo electrónico a cada miembro. </p>
+            
+                  </div>
+                </div>
+              </div>
+   
+   
+        </div>
+      </div>
+  
 </body>
 </html>

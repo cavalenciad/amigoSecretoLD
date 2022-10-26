@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+    font-family: roboto;
+}
+
+.background {
+    background-image: url(/img/mainImg4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding-top: 145px;
+   /*  padding-bottom: 80px; */
+   
+}
+
+body {
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   text-align: justify;
+   
+ 
+}
+
+h1  {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-top: 30px;
+}
+
+h1 b {
+    color: #000000;
+}
+
+.topSide {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 120px;
+  }
+
+  section .topSide{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    flex-wrap: wrap;
+    padding: 145px;
+    width: 100px;
+  }
+
+  .topSide p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    padding-bottom: 70px;
+  }
+    
+
+
+
+.fixedTitle h3 {
+    color:#000000;
+}
+
+
+/* .container {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.1;
+}
+ */
+
+
+.descriptionFixed {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+  
+}
+
+.navbar {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.login{
+    display: flex;
+    align-items: flex-end;
+    width: 40px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 80px
+}

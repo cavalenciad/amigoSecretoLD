@@ -10,6 +10,8 @@
     <title>Grupos - Amigo Secreto LD</title>
 </head>
 <body>
+      <!-------- MENU DE NAVEGACIÓN -------->
+      <%- include("./partials/header.ejs")%>
     <section class="container">
         <h2>Registrarme en el grupo</h2>
         <form  class="form-horizontal" action="/register" method="post">
@@ -50,11 +52,6 @@
                
             </div>
 
-<<<<<<< HEAD
-           
-            </div>
-            <input type="submit" value="Registrarme">
-=======
             <div class="inputSelect">
                 <select name="group" data-label="Group">
                     <% group.forEach(group => { %>
@@ -67,7 +64,6 @@
 
             <a class = "registered" href="/inicioSesion">Ya estoy registrado</a>
 
->>>>>>> 4a4658bbff4455a3554a5e16b5ae278dae166163
         </form>
     </section>
 </body>
