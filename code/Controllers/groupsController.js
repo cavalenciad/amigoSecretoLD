@@ -71,7 +71,11 @@ const groupsController = {
 
     login: (req, res) => {
         res.render("login.ejs");
-    }
+    },
+
+    adminGroup: (req, res) => {
+        res.render("adminGroup.ejs");
+}
 }
 
 module.exports = groupsController;
