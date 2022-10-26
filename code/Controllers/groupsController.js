@@ -1,5 +1,6 @@
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
+const { validationResult } = require('express-validator');
 
 const groupsController = {
     groupsForm: (req, res) => {
@@ -31,6 +32,8 @@ const groupsController = {
 
     registerCreate: (req, res) => {
 
+        //const resultValidation = validationResult(req);
+
         db.members.findOne({
             where:{idcard: req.body.idCard},
         })
@@ -43,12 +46,12 @@ const groupsController = {
                     }
                 })
                 .then((group) => {
-                    /* res.render('register.ejs', {group}, {
+                    res.render('register.ejs', {group}, {
                         errors: {
                             idcard: { msg: 'Ya estás registrado' }
                         }
-                    }) */
-                    res.send('Ya estás registrado');
+                    })
+                    //res.send('Ya estás registrado');
                 })                    
             }else{
                 db.members.create({
