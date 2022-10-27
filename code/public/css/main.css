@@ -21,9 +21,9 @@
 
 body {
     display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   text-align: justify;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: justify;
    
  
 }
@@ -43,7 +43,7 @@ h1 b {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    padding: 120px;
+    padding: 50px;
   }
 
   section .topSide{
@@ -51,17 +51,18 @@ h1 b {
     justify-content: center;
     text-align: justify;
     flex-wrap: wrap;
-    padding: 145px;
+    padding: 50px;
     width: 100px;
   }
 
   .topSide p {
-    font-size: 18px;
+    font-size: 30px;
     margin-bottom: 10px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
-    padding-bottom: 70px;
+    padding-bottom: 5px;
+    justify-content: space-around;
   }
     
 
