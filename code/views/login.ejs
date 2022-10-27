@@ -4,27 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/login.css">
     <title>Perfil</title>
 </head>
 <body>
       <!-------- MENU DE NAVEGACIÓN -------->
+
       <%- include("./partials/header.ejs")%>
+
+    <div class=""></div>
+      <div class="background">
     <section class="group">
         <form action="/register" method="post">
 
-            <h2>Ingresa a tu perfil</h2>
+            <h2>Iniciar Sesión</h2>
             
-            <div>
+            <div class="inputsLogin">
                 <input type="text" placeholder="Documento de identidad" name="idCard">
             </div>
 
-            <div>
+            <div class="inputsLogin">
                 <input type="password" placeholder="Contraseña" name="password">
             </div>
 
-            <input type="submit" value="Iniciar Sesión">
+            <input  class="buttonIngresar" type="submit" value="Ingresar">
 
         </form>
     </section>
+</div>
 </body>
 </html>
