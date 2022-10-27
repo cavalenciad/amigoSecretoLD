@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
+        lastname:{
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
         idcard:{
             type: DataTypes.STRING(45),
             allowNull: false

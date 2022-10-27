@@ -15,9 +15,11 @@ const validationMember = [
 router.get("/grupos", groupsController.groupsForm)
 router.get("/registro", groupsController.register)
 router.get("/inicioSesion", groupsController.login)
-router.get("/admin", groupsController.adminGroup)
+router.get("/admin/:id", groupsController.adminGroup)
+router.get("/profile/:idCard", groupsController.profile);
 
 router.post("/grupos", groupsController.groupsCreate)
 router.post("/registro", validationMember, groupsController.registerCreate)
+//router.post('/inicioSesion', groupsController.profile);
 
 module.exports = router;

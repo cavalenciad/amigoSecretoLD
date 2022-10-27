@@ -73,9 +73,37 @@ const groupsController = {
         res.render("login.ejs");
     },
 
+    profile: (req, res) => {
+        db.members.findOne({
+            where: {idcard: req.params.idCard},
+            include: {
+                all: true,
+                nested: true
+            }
+        })
+        .then((userFound) => {
+            res.render("profile", {
+                usuario: userFound,
+                //user: req.session.usuarioLogueado
+            });
+        })
+    },
+
     adminGroup: (req, res) => {
-        res.render("adminGroup.ejs");
-}
+        db.groups.findByPk(req.params.id)
+        .then((group) => {
+            db.members.findAll({
+                where: {id_groups: group.id},
+                include: {
+                    all: true,
+                    nested: true
+                }
+            })
+            .then((member) => {
+                res.render("adminGroup.ejs", {group, member});
+            })
+        })
+    }
 }
 
 module.exports = groupsController;
