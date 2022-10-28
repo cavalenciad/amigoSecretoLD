@@ -40,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
         rol:{
             type: DataTypes.INTEGER
         },
+        id_member:{
+            type: DataTypes.INTEGER
+        },
         id_groups:{
             type: DataTypes.INTEGER,
             foreignKey: true,

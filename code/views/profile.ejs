@@ -27,5 +27,18 @@
             </div>
         <% }%>
     </div>
+
+    <% if (usuario.id_member === null) { %>
+        <div>
+            <form action="/profile/<%= usuario.idcard %>" method="post">
+                <h1>Amigo Secreto</h1>
+                <hr>
+                <input type="submit" value="¿A quién tengo?">
+            </form>
+        </div>
+    <% } %>    
+
+    
+
 </body>
 </html>
