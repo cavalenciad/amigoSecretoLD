@@ -15,10 +15,15 @@
      <%- include("./partials/header.ejs")%>
 
      <div class="background">
+    
+        <h2>Creación de grupos</h2>
+        <div class="topSide">
     <section class="group">
+
+        
         <form action="/grupos" method="post">
 
-            <h2>Creación de grupos</h2>
+            
             <p>Para la creación de un grupo debes tener en cuenta:
                 <ul>
                     <li>El creador del grupo será el administrador del mismo.</li>
@@ -30,11 +35,12 @@
             <div class="nameGroup">
                 <input type="text" placeholder="Nombre del grupo" name="groupName">
             </div>
-
+            <div class="button">
             <input  class="btn btn-primary" type="submit" value="Crear Grupo">
-
+                </div>
         </form>
     </section>
+</div>
 </div>
 </body>
 </html>

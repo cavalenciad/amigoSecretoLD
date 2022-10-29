@@ -38,6 +38,8 @@ h1 b {
     color: #000000;
 }
 
+
+
 .topSide {
     color: aliceblue;
     display: flex;
@@ -56,13 +58,15 @@ h1 b {
   }
 
   .topSide p {
-    font-size: 30px;
+    font-size: 22px;
     margin-bottom: 10px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
     padding-bottom: 5px;
     justify-content: space-around;
+    text-align: justify;
+    width: 60%;
   }
     
 
@@ -98,8 +102,13 @@ h1 b {
     width: 40px;
 }
 
-.buttons {
+.buttons  {
     display: flex;
-    justify-content: space-around;
-    margin-left: 80px
+    justify-content: center;
+    /* width: 70%; */
+}
+
+.buttons i {
+    padding-left: 10px;
+    /* width: 70%; */
 }

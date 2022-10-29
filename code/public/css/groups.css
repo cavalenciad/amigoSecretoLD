@@ -9,7 +9,7 @@
 }
 
 .background {
-    background-image: url(/img/groupsImg2.jpg);
+    background-image: url(/img/background3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -40,17 +40,17 @@ body {
     padding-top: 21px;
     width: 53%;
     margin-top: -61px;
-    background: #c3c3c38c;
+    background: #eed8d88c;
     height: 432px;
   }
-
-  .nameGroup {
-    
+  .topSide {
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 50px;
   }
 
-/* .group h2 {
-
-} */
 
 
 form {
@@ -58,4 +58,21 @@ form {
     font-size: 20px;
     padding-top: 20px;
     opacity: 1;
+}
+
+h2 { 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 25px;
+    font-size: 100px;
+}
+
+.nameGroup {
+    border-radius: 8px;
+    padding-top: 20px;
+}
+
+ .button  { 
+    border-radius: 6px;
+    padding-top: 25px;
 }
