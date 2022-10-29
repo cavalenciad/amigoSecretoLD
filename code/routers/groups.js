@@ -20,6 +20,7 @@ router.get("/profile/:idCard", groupsController.profile);
 
 router.post("/grupos", groupsController.groupsCreate)
 router.post("/registro", validationMember, groupsController.registerCreate)
+router.post('/inicioSesion', groupsController.processLogin);
 router.post("/profile/:idCard", groupsController.draw)
 //router.post('/inicioSesion', groupsController.profile);
 

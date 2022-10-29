@@ -74,6 +74,26 @@ const groupsController = {
         res.render("login.ejs");
     },
 
+    processLogin: async (req, res) => {
+        let friend = await db.members.findOne({
+            where: {idcard: req.body.idCard},
+            include:{
+                all: true,
+                nested: true
+            }
+        });
+
+        let secretFriend = await db.members.findOne({
+            where: {id: friend.id_member}
+        })
+
+        if(friend.id_member != null){
+            res.render('secretProfile', {usuario: friend, amigo: secretFriend})
+        }else{
+            res.render('profile', {usuario: friend})
+        }        
+    },
+
     profile: (req, res) => {
 
         db.members.findOne({
@@ -101,10 +121,9 @@ const groupsController = {
                 }
             })
 
-            let user = member.name;
+            let idUser = member.id;
             let secretFriend = member.id_member
             let idFriend;
-            let randomName;
 
             let users = await db.members.findAll({
                 where: { id_groups: member.id_groups }
@@ -113,39 +132,46 @@ const groupsController = {
             let arrayId = users.map(id => id.id);
             let arrayId_member = users.map(id_member => id_member.id_member);
 
-            let arrayCross = arrayId.filter(function(value) {
+            let arrayCross = arrayId.filter(function (value) {
                 return arrayId_member.indexOf(value) != -1;
             });
 
-            console.log(arrayCross);
-
-            let arrayNames = users.map(names => names.name);
-
-            let indice = arrayNames.indexOf(user)
-
-            if(user && secretFriend === null) {
-                //let name = arrayNames[indice];
-
-                if (indice >= 0) {
-                    arrayNames.splice(indice, 1);
+            let arrayToAnalyze = [];
+            for (let i = 0; i < arrayId.length; i++) {
+                let igual = false;
+                for (let j = 0; j < arrayCross.length & !igual; j++) {
+                    if (arrayId[i] === arrayCross[j])
+                        igual = true;
                 }
-                let randomNumber = Math.floor((Math.random() * arrayNames.length));
-                randomName = arrayNames[randomNumber];
+                if (!igual) arrayToAnalyze.push(arrayId[i]);
+            }
+
+            console.log(arrayToAnalyze);
+
+            let indexId = arrayToAnalyze.indexOf(idUser);
+
+            if (idUser && secretFriend === null) {
+
+                if (indexId >= 0) {
+                    arrayToAnalyze.splice(indexId, 1);
+                }
+
+                let randomNumber = Math.floor((Math.random() * arrayToAnalyze.length));
+                randomId = arrayToAnalyze[randomNumber];
 
                 let friend = await db.members.findOne({
-                    where: {name: randomName}
+                    where: { id: randomId }
                 })
-                
-                res.render('profile', {usuario: member, amigo: friend})
-    
+
+                res.render('secretProfile', { usuario: member, amigo: friend })
+
                 idFriend = friend.id
-    
+
                 await member.update({
                     id_member: idFriend
                 })
+                }
             }
-
-        }
 
         catch (error) {
             console.log(error);
