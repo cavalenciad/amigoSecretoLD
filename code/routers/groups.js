@@ -20,12 +20,8 @@ router.get("/profile/:idCard", groupsController.profile);
 
 router.post("/grupos", groupsController.groupsCreate)
 router.post("/registro", validationMember, groupsController.registerCreate)
-<<<<<<< HEAD
-router.post('/inicioSesion', groupsController.profile);
-=======
 router.post('/inicioSesion', groupsController.processLogin);
 router.post("/profile/:idCard", groupsController.draw)
 //router.post('/inicioSesion', groupsController.profile);
->>>>>>> 1b79085c4798b0c111873a96ee3b89e539f5c2c4
 
 module.exports = router;
