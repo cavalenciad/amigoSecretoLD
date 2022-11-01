@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const methodOverride = require('method-override');
 const PORT = process.env.PORT || 3001
 
 const rutaMain = require("./routers/main.js");

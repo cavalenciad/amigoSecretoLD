@@ -34,11 +34,21 @@
                   <input type="text" id="form3Example1cg" placeholder="Nombre" name="name" class="form-control form-control-lg" />
                  <!--  <label class="form-label" for="name">Nombre</label> -->
                 </div>
+                <%  if (locals.errors && errors.name) { %>
+                  <div style="color: red">
+                      <%= errors.name.msg %> 
+                  </div>
+              <% } %> 
 
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example3cg" placeholder="Apellido" name="lastName" class="form-control form-control-lg" />
                   <!-- <label class="form-label" for="lastName">Apellido</label> -->
                 </div>
+                <%  if (locals.errors && errors.lastName) { %>
+                  <div style="color: red">
+                      <%= errors.lastName.msg %> 
+                  </div>
+              <% } %> 
 
                 <h6 class="mb-0 me-4">Género: </h6>
 
@@ -65,9 +75,9 @@
                     <!-- <label class="form-label" for="lastName">Apellido</label> -->
                   </div>
 
-                  <%  if (locals.errors && errors.idcard) { %>
-                    <div class="Merrors">
-                        <%= errors.idcard.msg %> 
+                  <%  if (locals.errors && errors.idCard) { %>
+                    <div style="color: red">
+                        <%= errors.idCard.msg %> 
                     </div>
                 <% } %> 
 
@@ -80,16 +90,31 @@
                   <input type="text" id="form3Example4cdg" placeholder="Gustos" name="like" class="form-control form-control-lg" />
                   <!-- <label class="form-label" for="like">Gustos</label> -->
                 </div>
+                <%  if (locals.errors && errors.like) { %>
+                  <div style="color: red">
+                      <%= errors.like.msg %> 
+                  </div>
+              <% } %> 
 
                 <div class="form-outline mb-4">
                     <input type="text" id="form3Example4cdg" placeholder="Disgustos" name="dislike" class="form-control form-control-lg" />
                     <!-- <label class="form-label" for="dislike">Disgustos</label> -->
                   </div>
+                  <%  if (locals.errors && errors.dislike) { %>
+                    <div style="color: red">
+                        <%= errors.dislike.msg %> 
+                    </div>
+                <% } %> 
 
                   <div class="form-outline mb-4">
                     <input type="text" id="form3Example4cdg" placeholder="Alergias" name="alergies" class="form-control form-control-lg" />
                     <!-- <label class="form-label" for="alergies">Alergias</label> -->
                   </div>
+                  <%  if (locals.errors && errors.alergies) { %>
+                    <div style="color: red">
+                        <%= errors.alergies.msg %> 
+                    </div>
+                <% } %> 
 
                   <div class="inputSelect">
                     <select name="group" data-label="Group">

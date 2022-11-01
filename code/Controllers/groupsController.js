@@ -1,7 +1,6 @@
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
 const { validationResult } = require('express-validator');
-const { localsName } = require("ejs");
 
 const groupsController = {
     groupsForm: (req, res) => {
@@ -31,43 +30,70 @@ const groupsController = {
 
     },
 
-    registerCreate: (req, res) => {
+    registerCreate: async (req, res) => {
 
-        //const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
-        db.members.findOne({
-            where: { idcard: req.body.idCard },
+        let member = await db.members.findOne({
+            where: { idcard: req.body.idCard }
         })
-            .then((member) => {
-                if (member) {
-                    db.groups.findAll({
-                        include: {
-                            all: true,
-                            nested: true
-                        }
-                    })
-                        .then((group) => {
-                            res.render('register.ejs', { group }, {
-                                errors: {
-                                    idcard: { msg: 'Ya estás registrado' }
-                                }
-                            })
-                            //res.send('Ya estás registrado');
-                        })
-                } else {
-                    db.members.create({
-                        name: req.body.name,
-                        lastname: req.body.lastName,
-                        idcard: req.body.idCard,
-                        password: req.body.password,
-                        like: req.body.like,
-                        dislike: req.body.dislike,
-                        alergies: req.body.alergies,
-                        id_groups: req.body.group
-                    })
-                    res.redirect('/inicioSesion')
+
+        let allGroups = await db.groups.findAll({
+            include: {
+                all: true,
+                nested: true
+            }
+        });
+
+        let allMembers = await db.members.findAll({
+            include: {
+                all: true,
+                nested: true
+            },
+            where: { id_groups: req.body.group }
+        });
+
+        let arrayMembers = allMembers.map(m => m.id)
+
+        console.log(resultValidation.mapped());
+
+        if (resultValidation.errors.length > 0) {
+            res.render("register.ejs", { group: allGroups }, {
+                errors: resultValidation.mapped(),
+            })
+        } else if (member != null) {
+            res.render("register.ejs", { group: allGroups }, {
+                errors: {
+                    idCard: { msg: 'Ya estás registrado' }
                 }
             })
+            /* res.redirect('/registro'); */
+        } else if (arrayMembers.length != 0) {
+            db.members.create({
+                name: req.body.name,
+                lastname: req.body.lastName,
+                idcard: req.body.idCard,
+                password: req.body.password,
+                like: req.body.like,
+                dislike: req.body.dislike,
+                alergies: req.body.alergies,
+                id_groups: req.body.group
+            })
+            res.redirect('/inicioSesion')
+        } else {
+            db.members.create({
+                name: req.body.name,
+                lastname: req.body.lastName,
+                idcard: req.body.idCard,
+                password: req.body.password,
+                like: req.body.like,
+                dislike: req.body.dislike,
+                alergies: req.body.alergies,
+                id_groups: req.body.group,
+                rol: 1
+            })
+            res.redirect('/inicioSesion')
+        }
     },
 
     login: (req, res) => {
@@ -76,22 +102,22 @@ const groupsController = {
 
     processLogin: async (req, res) => {
         let friend = await db.members.findOne({
-            where: {idcard: req.body.idCard},
-            include:{
+            where: { idcard: req.body.idCard },
+            include: {
                 all: true,
                 nested: true
             }
         });
 
         let secretFriend = await db.members.findOne({
-            where: {id: friend.id_member}
+            where: { id: friend.id_member }
         })
 
-        if(friend.id_member != null){
-            res.render('secretProfile', {usuario: friend, amigo: secretFriend})
-        }else{
-            res.render('profile', {usuario: friend})
-        }        
+        if (friend.id_member != null) {
+            res.render('secretProfile', { usuario: friend, amigo: secretFriend })
+        } else {
+            res.render('profile', { usuario: friend })
+        }
     },
 
     profile: (req, res) => {
@@ -146,8 +172,6 @@ const groupsController = {
                 if (!igual) arrayToAnalyze.push(arrayId[i]);
             }
 
-            console.log(arrayToAnalyze);
-
             let indexId = arrayToAnalyze.indexOf(idUser);
 
             if (idUser && secretFriend === null) {
@@ -170,8 +194,8 @@ const groupsController = {
                 await member.update({
                     id_member: idFriend
                 })
-                }
             }
+        }
 
         catch (error) {
             console.log(error);

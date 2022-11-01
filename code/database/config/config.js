@@ -1,24 +1,24 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "admin",
+    "password": null,
     "database": "amigosecretold",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "admin",
-    "database": "amigosecretold",
+    "password": null,
+    "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "admin",
-    "database": "amigosecretold",
+    "password": null,
+    "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "mysql"
   }
 }
 
