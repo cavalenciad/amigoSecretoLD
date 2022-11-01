@@ -12,11 +12,14 @@
 </head>
   
  <body>
-    
- <!-------- MENU DE NAVEGACIÓN -------->
- <%- include("./partials/header.ejs")%>
 
-    <section class="nameGroup" style="padding-top: 50px;">
+ <!-------- MENU DE NAVEGACIÓN -------->
+ <div class="header">
+    <%- include("./partials/header.ejs")%>
+   </div>
+
+    <section>
+        <div class="nameGroup">
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
@@ -55,5 +58,8 @@
                 <% }); %>                    
             </tbody>
         </table>
+    </div>
     </section>
+    <%- include("./partials/footer.ejs")%>
 </body>
+</html>

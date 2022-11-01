@@ -16,11 +16,12 @@
   
     <div class="background">
 
-     <!-------- MENU DE NAVEGACIÓN -------->
-     <%- include("./partials/header.ejs")%>
+      <div class="header">
+        <%- include("./partials/header.ejs")%>
+       </div>
 
       
-        <h1> <b> Bienvenid@ al Amigo Secreto en Línea Directa</b> </h1>
+        <h1> <b>SORTEO AMIGO SECRETO LÍNEA DIRECTA</b> </h1>
 
      <section class="topSide">
 
@@ -29,39 +30,18 @@
         </p>
        
 
-    </section>
+    </section> 
 
-    <!-- <section class="topSide">
-        <p>Tienes la oportunidad de registrarte con tus datos personales y algunas preferencias </p>
-    </section> -->
-       <!--  <div class="buttons">
-        <form class="btnCreate" action="/grupos" method="get">
-            <input class="btn btn-primary " type="submit" name="groupsCreate" value="CREAR GRUPO">
-        </form>
-
-        <form class="" action="/registro" method="get">
-            <input class="btn btn-success" type="submit" name="register" value="REGISTRARME">
-        </form>
-
-        <form class="justify-content-between" action="/inicioSesion" method="get">
-            <input class="d-flex justify-content-end btn btn-danger" type="submit" name="login" value="INICIAR SESION">
-        </form>
-        </div> -->
-    
-    
-     <div class="container" style="margin-top:50px">
         <div class="descriptionFixed">
-        <h2>Historia del Amigo Secreto</h2>
-        <div class="row">
-          <div class="col-md-4">
+          <h2>Historia del Amigo Secreto</h2>
+        
+        <div >
               <div class="fixedTitle">
                   <h3><strong>¿Cómo comenzó el Amigo Secreto en América?</strong></h3>
-               
-            <p>
-              Los colonizadores neerlandeses trajeron con ellos la tradición de "Sinterklaas" (Santa Claus) al Nuevo Mundo hace más de 400 años. Santa Claus o, San Nicolás, en América está basado en "Sinterklaas". Ambos traen regalos a los niños y adultos por igual. Ya que familias y amigos a menudo intercambian regalos en la época de Navidad, el Amigo Secreto, o Amigo Invisible, comenzó para simplificar y al mismo tiempo hacer divertido el proceso de dar regalos. </p>
+                  <p>Los colonizadores neerlandeses trajeron con ellos la tradición de "Sinterklaas" (Santa Claus) al Nuevo Mundo hace más de 400 años. Santa Claus o, San Nicolás, en América está basado en "Sinterklaas". Ambos traen regalos a los niños y adultos por igual. Ya que familias y amigos a menudo intercambian regalos en la época de Navidad, el Amigo Secreto, o Amigo Invisible, comenzó para simplificar y al mismo tiempo hacer divertido el proceso de dar regalos. </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="">
                <div class="fixedTitle">
                   <h3><strong>¿Cómo funcionaba el Amigo Secreto antes de la internet?</strong></h3>
                </div>
@@ -69,10 +49,11 @@
               Un grupo de personas solían escribir su nombre en un pequeño papel y estos se juntaban en un sombrero, después cada persona sacaba un papel en secreto con el nombre de alguna otra persona. Luego se compraba un regalo que se daba a la persona de quien estaba escrito el nombre en el papelito. </p>
             
           </div>
-          <div class="col-md-4"> 
+          
               <div class="fixedTitle">
               <h3><strong>Instrucciones de como utilizar nuestra plataforma de Amigo Secreto</strong></h3>
           </div>
+          <div class="instruLd"> 
             <p>
               1. Primer paso creamos un grupo con el nombre de tu sector. La persona que creá el grupo será el líder y tendrá acceso a la lista de miembros del grupo. 
               <hr>
@@ -87,11 +68,9 @@
             
                   </div>
                 </div>
-              </div>
-   
-   
-        </div>
-      </div>
-  
+                 
+                
+           
+      <%- include("./partials/footer.ejs")%>
 </body>
 </html>

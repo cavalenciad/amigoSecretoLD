@@ -11,33 +11,34 @@
     <title>Inicio Sesión</title>
 </head>
 <body>
+    <div class="header">
       <!-------- MENU DE NAVEGACIÓN -------->
 
       <%- include("./partials/header.ejs")%>
+    </div>
 
       <div class="background">
         
-        <section class="vh-100 bg-image">
+        <section>
 
-              <h2 class="text-uppercase text-center mb-5">Iniciar Sesión</h2>
+              <h2>Iniciar Sesión</h2>
               <div class="box">
               <form action="/inicioSesion" method="post">
                 <div class="data">
 
-                <div class="form-outline mb-4">
+                <div class="">
                   <input type="text" id="form3Example1cg" placeholder="Ingresar C.C" name="idCard" class="form-control form-control-lg" />
                  <!--  <label class="form-label" for="name">Nombre</label> -->
                 </div>
 
-                <div class="form-outline mb-4">
+                <div class="">
                   <input type="password" id="form3Example3cg" placeholder="Contraseña" name="password" class="form-control form-control-lg" />
                   <!-- <label class="form-label" for="lastName">Apellido</label> -->
                 </div>
 
-                <div class="d-flex justify-content-center">
-                    <button type="submit"
-                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Iniciar Sesion" href="/profile">Ingresar</button>
-                  </div>
+                <div class="button">
+                  <input  class="btn btn-danger" type="submit" value="Crear Grupo">
+                      </div>
   
                   <p class="text-center text-muted mt-5 mb-0">¿No tienes una cuenta? <a href="/registro"
                       class="fw-bold text-body"><u>Registrarme</u></a></p>
@@ -47,6 +48,9 @@
         </form>
       </div>
     </section>
+
 </div>
+
+<%- include("./partials/footer.ejs")%>
 </body>
 </html>
