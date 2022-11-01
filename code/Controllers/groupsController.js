@@ -10,9 +10,12 @@ const groupsController = {
     groupsCreate: (req, res) => {
         db.groups.create({
             groupname: req.body.groupName,
+            firstcandy: req.body.firstCandy,
+            secondcandy: req.body.secondCandy,
+            finalmeeting: req.body.finalMeeting
         })
             .then(() => {
-                res.redirect("/inicioSesion")
+                res.redirect("/registro")
             })
     },
 
@@ -114,9 +117,14 @@ const groupsController = {
         })
 
         if (friend.id_member != null) {
-            res.render('secretProfile', { usuario: friend, amigo: secretFriend })
+            res.render('secretProfile', { 
+                usuario: friend, 
+                amigo: secretFriend
+            })
         } else {
-            res.render('profile', { usuario: friend })
+            res.render('profile', { 
+                usuario: friend
+            })
         }
     },
 
@@ -148,8 +156,13 @@ const groupsController = {
             })
 
             let idUser = member.id;
-            let secretFriend = member.id_member
+            let secretFriend = member.id_member;
+            let idGroup = member.id_groups;
             let idFriend;
+
+            let group = await db.groups.findAll({
+                where: {id: idGroup}
+            });
 
             let users = await db.members.findAll({
                 where: { id_groups: member.id_groups }
@@ -187,7 +200,11 @@ const groupsController = {
                     where: { id: randomId }
                 })
 
-                res.render('secretProfile', { usuario: member, amigo: friend })
+                res.render('secretProfile', { 
+                    usuario: member, 
+                    amigo: friend, 
+                    grupo: group 
+                })
 
                 idFriend = friend.id
 

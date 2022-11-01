@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -25,23 +25,23 @@
 
 
 .background {
-    background-color:#333;
+    background-color: #333;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     padding-top: 145px;
-   /*  padding-bottom: 80px; */
-   
+    /* padding-bottom: 20px; */
+
 }
 
 body {
     display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   text-align: justify;
-   background: #333;
- 
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: justify;
+    background: #333;
+
 }
 
 .group {
@@ -54,82 +54,81 @@ body {
     box-shadow: 0px 0px 3px #c3c3c3;
     transition: all 0.3 ease;
     width: 53%;
-    height: 550px;
+    height: 650px;
     margin-top: -200px;
     margin-bottom: 100px;
-  }
+}
 
-  .topSide {
+.topSide {
     color: aliceblue;
     display: flex;
     justify-content: center;
     flex-direction: row;
     padding: 50px;
-  }
+}
 
 form {
-  
     font-size: 20px;
     padding-bottom: 220px;
     opacity: 1;
 }
 
-.title h2 { 
+.title h2 {
     display: flex;
     justify-content: center;
     padding-bottom: 25px;
     padding-top: 60px;
     font-size: 30px;
-    color:#b73d32;
+    color: #b73d32;
 }
 
 h3 {
-   color: #b73d32;
+    color: #b73d32;
 }
 
-.nameGroup input{
+.groupInfo input {
     color: #333;
-    border-radius: 8px;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
 
 
 button {
-    background-color:#b73d32;
+    background-color: #b73d32;
 }
 
- .button input { 
+.button input {
     border-radius: 8px;
     padding: 10px;
     margin-top: 10px;
-    
+
 }
 
 /* ---------------- PIE DE PAGINA ---------- */
 
-.Sfooter{
+.Sfooter {
     width: 100%;
     height: 225px;
     background-color: #333;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size:20px;
-    
+    font-size: 20px;
+
 }
 
-.Smapa{
+.Smapa {
     flex-direction: column;
     display: flex;
 
 }
 
-.Smapa a:hover{
+.Smapa a:hover {
     color: #b73d32;
 }
 
-.Sfooter div{
+.Sfooter div {
     padding-top: 20px;
     padding-bottom: 20px;
     width: 90%;
@@ -139,12 +138,12 @@ button {
 
 
 
-.Sfooter h3{
+.Sfooter h3 {
     color: #b73d32;
     letter-spacing: 1px;
 }
 
-.Sfooter p{
+.Sfooter p {
     margin-top: 15px;
     color: #ffffff;
 }

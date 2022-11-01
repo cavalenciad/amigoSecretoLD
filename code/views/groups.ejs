@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,60 +11,72 @@
     <link rel="stylesheet" href="css/groups.css">
     <title>Grupos - Amigo Secreto LD</title>
 </head>
+
 <body>
-     <!-------- MENU DE NAVEGACIÓN -------->
-     <div class="header">
-     <%- include("./partials/header.ejs")%>
+    <!-------- MENU DE NAVEGACIÓN -------->
+    <div class="header">
+        <%- include("./partials/header.ejs")%>
     </div>
 
     <div class="title">
-    <h2><b>Creación de grupos</b></h2>
-</div>
-     <div class="background">
-    
-       
+        <h2><b>Creación de grupos</b></h2>
+    </div>
+    <div class="background">
+
+
         <div class="topSide">
-            
-    <section class="group">
 
-        
+            <section class="group">
 
-        <form action="/grupos" method="post">
 
-            <h3 > Para la creación de un grupo debes tener en cuenta:</h3>
-            <p>
-                1. La primera persona que se registre en un grupo ya creado sera el administrador de dicho grupo.
-                <hr>
-                2. El administrador del grupo se encargará de diligenciar las fechas de endulzadas y descubrimiento.
-                <hr>
-                3. Una vez creado el grupo, los participantes podrán acceder a él y realizar la inscripción con los datos solicitados.
-                <hr>
-            </p>
-            
-            <div class="nameGroup">
-                <label for="nameGroup">Nombre del grupo: </label>
-                <input type="text" placeholder="" name="groupName">
-            </div>
 
-            <div class="flex-container">
+                <form action="/grupos" method="post">
 
-            <div class="nameGroup">
-                <label for="nameGroup">Endulzada: </label>
-                <input type="text" placeholder="" name="groupName">
-            </div>
-            <div class="nameGroup">
-                <label for="nameGroup">Descubrimiento: </label>
-                <input type="text" placeholder="" name="groupName">
-            </div>
-          
-            </div>
-            <div class="button">
-            <input  class="btn btn-danger" type="submit" value="Crear Grupo">
-                </div>
-        </form>
-    </section>
-</div>
-</div>
-<%- include("./partials/footer.ejs")%>
+                    <h3> Para la creación de un grupo debes tener en cuenta:</h3>
+                    <p>
+                        1. La primera persona que se registre en un grupo ya creado sera el administrador de dicho
+                        grupo.
+                        <hr>
+                        2. El administrador del grupo se encargará de diligenciar las fechas de endulzadas y
+                        descubrimiento.
+                        <hr>
+                        3. Una vez creado el grupo, los participantes podrán acceder a él y realizar la inscripción con
+                        los datos solicitados.
+                        <hr>
+                    </p>
+                    <div class="flex-container">
+
+                        <div class="groupInfo">
+                            <label for="nameGroup">Nombre del grupo: </label>
+                            <input type="text" placeholder="" name="groupName">
+                        </div>
+
+                        <div class="groupInfo">
+                            <label for="nameGroup">Primera Endulzada: </label>
+                            <input type="date" placeholder="" name="firstCandy">
+                        </div>
+
+                        <div class="groupInfo">
+                            <label for="nameGroup">Segunda Endulzada: </label>
+                            <input type="date" placeholder="" name="secondCandy">
+                        </div>
+
+                        <div class="groupInfo">
+                            <label for="nameGroup">Descubrimiento: </label>
+                            <input type="date" placeholder="" name="finalMeeting">
+                        </div>
+
+                    </div>
+
+                    <div class="button">
+                        <input class="btn btn-danger" type="submit" value="Crear Grupo">
+                    </div>
+
+                </form>
+            </section>
+        </div>
+    </div>
+    <%- include("./partials/footer.ejs")%>
 </body>
+
 </html>

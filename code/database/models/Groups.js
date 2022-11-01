@@ -12,7 +12,19 @@ module.exports = (sequelize, DataTypes) => {
         groupname:{
             type: DataTypes.STRING(100),
             allowNull: false
-        }
+        },
+        firstcandy:{
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
+        secondcandy:{
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
+        finalmeeting:{
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
     };
 
     let config = {
