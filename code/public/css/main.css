@@ -35,7 +35,11 @@ h1  {
 }
 
 h1 b {
-    color: #000000;
+    color: black;
+}
+
+.descriptionFixed h2 {
+    color:black
 }
 
 
