@@ -11,7 +11,7 @@
 
 1. Clonar el proyecto en Visual Studio Code con el siguiente comando:
   npm clone https://github.com/cavalenciad/amigoSecretoLD.git 
-2. Abrir el archivo scriptDB.sql copiarlo y ejecutatarlo en el programa de visualización de bases de datos de su preferiencia.
+2. Abrir el archivo db_amigosecreto.sql copiarlo y ejecutatarlo en el programa de visualización de bases de datos de su preferiencia.
 3. Revisar el archivo database/config/config.js y configurar la conexión con la DB.
 4. Instalar las dependencias con el siguiente comando en la consola: npm i
 5. Lazar la aplicación con el comando npx nodemon app.js
