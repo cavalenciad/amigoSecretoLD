@@ -11,8 +11,11 @@ const groupsController = {
         db.groups.create({
             groupname: req.body.groupName,
             firstcandy: req.body.firstCandy,
+            valorE1: req.body.valorE1,
             secondcandy: req.body.secondCandy,
-            finalmeeting: req.body.finalMeeting
+            valorE2: req.body.valorE2,
+            finalmeeting: req.body.finalMeeting,
+            
         })
             .then(() => {
                 res.redirect("/registro")
@@ -142,6 +145,10 @@ const groupsController = {
                     usuario: member
                 })
             })
+    },
+
+    secretProfile:  (req, res) => {
+        res.render("secretProfile.ejs");
     },
 
     draw: async (req, res) => {

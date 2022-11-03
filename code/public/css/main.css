@@ -9,7 +9,7 @@
 }
 
 .header {
-    background-color: #b73d32;
+    background-color: #ff5241;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,13 +22,17 @@
 
 
 
+/* .createGroup img{
+    height: 80px;
+} 
+ */
 
 .createGroup a {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
 
 .createGroup a:hover {
-    color: #b73d32;
+    color: #ff5241;
 }
 
 
@@ -61,14 +65,18 @@ h1  {
     margin-top: -6px;
 }
 
+
+
 h1 b {
-    color: #b73d32;
+    color: #ff5241;
 }
 
 .descriptionFixed h2 {
-    color: #b73d32;
+    color: #ff5241;
     font-size: 40px;
     padding-bottom: 35px;
+    display: flex;
+    padding-top: 40px;
 }
 
 
@@ -91,7 +99,7 @@ h1 b {
   }
 
   .topSide p {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 21px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -100,7 +108,7 @@ h1 b {
     justify-content: space-around;
     text-align: justify;
     width: 71%;
-    box-shadow: 0px 0px 3px #b73d32;
+    box-shadow: 0px 0px 3px #ff5241;
     padding: 20px;
     padding-top: 18px;
     margin-top: -41px;
@@ -110,7 +118,7 @@ h1 b {
 
 
 .fixedTitle h3 {
-    color:#b73d32;
+    color:#ff5241;
 }
 
 
@@ -123,7 +131,7 @@ h1 b {
 
 .descriptionFixed {
     color: rgb(255, 255, 255);
-    font-size: 17px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     width: 93%;
@@ -134,8 +142,16 @@ h1 b {
   
 }
 
+.descriptionFixed strong {
+    margin-bottom: 20px;
+}
+
 .instruLd {
     margin-top: 40px;
+}
+
+.instruLd b{
+   color: #ff5241;
 }
 
 
@@ -158,8 +174,13 @@ h1 b {
 
 }
 
+.Smapa a{
+    color: #ffffff;
+
+}
+
 .Smapa a:hover{
-    color: #b73d32;
+    color: #ff5241;
 }
 
 .Sfooter div{
@@ -173,7 +194,7 @@ h1 b {
 
 
 .Sfooter h3{
-    color: #b73d32;
+    color: #ff5241;
     letter-spacing: 1px;
 }
 

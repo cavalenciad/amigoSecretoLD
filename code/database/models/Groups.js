@@ -17,14 +17,23 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45),
             allowNull: false
         },
+        valorE1:{
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        },
         secondcandy:{
             type: DataTypes.STRING(45),
+            allowNull: false
+        },
+        valorE2:{
+            type: DataTypes.INTEGER(11),
             allowNull: false
         },
         finalmeeting:{
             type: DataTypes.STRING(45),
             allowNull: false
         },
+       
     };
 
     let config = {

@@ -9,7 +9,7 @@
 }
 
 .header {
-    background-color: #b73d32;
+    background-color: #ff5241;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -44,6 +44,10 @@ body {
 
 }
 
+.boxInfo {
+    display: flex;
+}
+
 .group {
     color: rgb(255, 255, 255);
     display: flex;
@@ -54,9 +58,14 @@ body {
     box-shadow: 0px 0px 3px #c3c3c3;
     transition: all 0.3 ease;
     width: 53%;
-    height: 650px;
+    height: 500px;
     margin-top: -200px;
     margin-bottom: 100px;
+}
+
+.groupInfo label {
+    color: #ff5241;
+    margin-left: 10px;
 }
 
 .topSide {
@@ -79,29 +88,31 @@ form {
     padding-bottom: 25px;
     padding-top: 60px;
     font-size: 30px;
-    color: #b73d32;
+    color: #ff5241;
 }
 
 h3 {
-    color: #b73d32;
+    color: #ff5241;
 }
 
 .groupInfo input {
     color: #333;
     border-radius: 5px;
     margin-bottom: 10px;
+    width: 193px;
+    margin-left: 10px;
 }
 
 
 
 button {
-    background-color: #b73d32;
+    background-color: #ff5241;
+    text-align: center;
 }
 
 .button input {
-    border-radius: 8px;
-    padding: 10px;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -124,8 +135,13 @@ button {
 
 }
 
+.Smapa a{
+    color: #ffffff;
+
+}
+
 .Smapa a:hover {
-    color: #b73d32;
+    color: #ff5241;
 }
 
 .Sfooter div {
@@ -139,7 +155,7 @@ button {
 
 
 .Sfooter h3 {
-    color: #b73d32;
+    color: #ff5241;
     letter-spacing: 1px;
 }
 

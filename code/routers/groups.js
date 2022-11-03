@@ -16,12 +16,13 @@ router.get("/grupos", groupsController.groupsForm)
 router.get("/registro", groupsController.register)
 router.get("/inicioSesion", groupsController.login)
 router.get("/admin/:id", groupsController.adminGroup)
-//router.get("/profile/:idCard", groupsController.profile);
+router.get("/secretProfile", groupsController.secretProfile)
+/* router.get("/secretProfile/:idCard", groupsController.profile); */
 
 router.post("/grupos", groupsController.groupsCreate)
 router.post("/registro", validationMember, groupsController.registerCreate)
-router.post('/inicioSesion', groupsController.processLogin);
+router.post('/secretProfile', groupsController.processLogin);
 router.post("/profile/:idCard", groupsController.draw)
-//router.post('/inicioSesion', groupsController.profile);
+/* router.post('/secretProfile', groupsController.profile); */
 
 module.exports = router;
